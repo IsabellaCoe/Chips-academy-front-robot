@@ -15,7 +15,7 @@ jobs:
         
       - name: Copy Repository to Destination
         run: |
-         robocopy "$(Github.Workspace)" C:\PROJETOS\Desenvolvimento\Chips-academy-front-robot /E  
+         robocopy "%GITHUB_WORKSPACE%" C:\PROJETOS\Desenvolvimento\Chips-academy-front-robot /E  
  
       - name: Set up Python
         uses: actions/setup-python@v5
