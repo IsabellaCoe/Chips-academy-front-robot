@@ -20,11 +20,12 @@ jobs:
  
       - name: Install Python e dependencies
         run: 
-         python -m pip install -- upgrade pip
-         pip install -r requeriments.txt
-         pip install robotframework
-         pip install robotframework-requests
-         pip install robotframework-seleniumlibrary 
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install robotframework
+          pip install robotframework-requests
+          pip install robotframework-seleniumlibrary
+          
  
       - name: Run Robot Framework tests
         run: 
