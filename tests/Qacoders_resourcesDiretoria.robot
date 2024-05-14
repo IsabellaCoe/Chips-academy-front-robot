@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    Process
 
 
 *** Variables *** 
@@ -20,6 +21,7 @@ Fechar o navegador
     #Caso de teste 01: Cadastrar Diretoria com sucesso
 Acessar a home page do site QaCoders
     Go To    url=${URL} 
+    Sleep    3s
     Wait Until Element Is Visible    locator=//h3[contains(.,'Login')]
 Digitar email válido 
     Input Text    locator=email   text=${EMAIL}
@@ -27,12 +29,14 @@ Digitar senha válida
     Input Text    locator=password     text=${SENHA_ADM}  
 Clicar em Entrar 
     Click Element    locator=login
+    Sleep    3s
     Wait Until Element Is Visible    locator=//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-yb0lig'][contains(.,'Cadastros')]    
 Clicar no menu Cadastros
     Click Element    locator=//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-yb0lig'][contains(.,'Cadastros')]
 
  Clicar no menu Diretorias
     Click Element    locator=Diretorias
+    Sleep    3s
     Wait Until Element Is Visible    locator=Novo Cadastro
 Clicar em Novo Cadastro
     Click Element    locator=Novo Cadastro

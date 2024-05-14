@@ -19,6 +19,7 @@ Fechar o navegador
     # Caso de teste 01: Cadastrar um novo usuário com sucesso
 Acessar a home page do site QaCoders
     Go To    url=${URL} 
+    Sleep    3s
     Wait Until Element Is Visible    locator=//h3[contains(.,'Login')]
 Digitar email válido 
     Input Text    locator=email   text=${EMAIL}
@@ -26,11 +27,13 @@ Digitar senha válida
     Input Text    locator=password     text=${SENHA_ADM}  
 Clicar em Entrar 
     Click Element    locator=login
+    Sleep    3s
     Wait Until Element Is Visible    locator=//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-yb0lig'][contains(.,'Cadastros')]    
 Clicar no menu Cadastros
     Click Element    locator=//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-yb0lig'][contains(.,'Cadastros')]
 Clicar no menu Usuarios
     Click Element    locator=//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-yb0lig'][contains(.,'Usuários')]
+    Sleep    3s
     Wait Until Element Is Visible    locator=//button[@class='css-fvzsut'][contains(.,'Novo Cadastro')]
 Clicar no botão Novo cadastro
     Click Element    locator=//button[@class='css-fvzsut'][contains(.,'Novo Cadastro')]
@@ -96,6 +99,7 @@ Confirmar a senha fora dos critérios de aceite
     Click Element    locator=//input[contains(@name,'confirmPassword')]
     Input Text    locator=//input[contains(@name,'confirmPassword')]    text=Testefront@
 Verificar Mensagem de erro de senha fora dos critérios de aceite
+    Sleep    3s
     Wait Until Element Is Visible    locator=//div[@class='MuiAlert-message css-1xsto0d'][contains(.,'Senha precisa ter: uma letra maiúscula, uma letra minúscula, um número, um caractere especial(@#$%) e tamanho entre 8-12.')]
 
     #Caso de teste 07: Cadastrar novo usuário sem sucesso- Senha sem caractere especial (@#$%)
@@ -133,6 +137,7 @@ Confirmar com senha diferente
     Click Element    locator=//input[contains(@name,'confirmPassword')]
     Input Text    locator=//input[contains(@name,'confirmPassword')]    text=Test1234@
 Verificar mensagem de erro que as senhas não conferem
+    Sleep    3s
     Wait Until Page Contains    text=As senhas não conferem 
 
      #Caso de teste 11: Realizar logout da página   
